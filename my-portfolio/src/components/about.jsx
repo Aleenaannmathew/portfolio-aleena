@@ -15,7 +15,7 @@ function IntroSection() {
                 <br />
                 I'm <span className="text-white">Aleena Mathew.</span>
               </h1>
-              
+
               <p className="text-xl sm:text-2xl text-gray-300 font-mono leading-relaxed">
                 A <span className="text-green-400 font-semibold">Full-Stack Developer</span> specializing in{' '}
                 <span className="text-green-400 font-semibold">Python, Django and React</span>, I enjoy building{' '}
@@ -25,7 +25,7 @@ function IntroSection() {
 
             <div className="text-gray-400 font-mono text-sm sm:text-base">
               <p>
-                I believe in writing <span className="text-green-400">clean, efficient code</span> and 
+                I believe in writing <span className="text-green-400">clean, efficient code</span> and
                 building systems that are both <span className="text-green-400">reliable and maintainable</span>.
               </p>
             </div>
@@ -34,9 +34,6 @@ function IntroSection() {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button className="bg-green-400 text-black px-6 py-3 font-mono font-semibold hover:bg-green-300 transition-colors duration-200 border-2 border-green-400">
                 View My Work
-              </button>
-              <button className="border-2 border-white text-white px-6 py-3 font-mono font-semibold hover:bg-white hover:text-black transition-colors duration-200">
-                Download CV
               </button>
             </div>
           </div>
@@ -50,7 +47,7 @@ function IntroSection() {
                 <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                 <span className="text-gray-400 text-sm font-mono ml-4">~/aleena-portfolio</span>
               </div>
-              
+
               <div className="space-y-3 font-mono text-sm">
                 <div className="flex items-center space-x-3">
                   <Code className="text-blue-400" size={20} />
@@ -59,7 +56,7 @@ function IntroSection() {
                     <p className="text-gray-500 text-xs">React.js, JavaScript, HTML/CSS</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-3">
                   <Database className="text-green-400" size={20} />
                   <div>
@@ -67,7 +64,7 @@ function IntroSection() {
                     <p className="text-gray-500 text-xs">Python, Django, REST APIs</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-3">
                   <Globe className="text-purple-400" size={20} />
                   <div>
@@ -76,7 +73,7 @@ function IntroSection() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="bg-black p-4 rounded border border-gray-700">
                 <p className="text-green-400 text-xs font-mono">
                   <span className="text-gray-500">$</span> aleena --status
@@ -89,7 +86,7 @@ function IntroSection() {
                 </p>
               </div>
             </div>
-            
+
             {/* Floating accent elements */}
             <div className="absolute -top-4 -right-4 w-8 h-8 bg-green-400 rounded-full opacity-20"></div>
             <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-green-400 rounded-full opacity-20"></div>
@@ -114,28 +111,28 @@ function AboutSection() {
               </h2>
               <div className="w-16 h-1 bg-green-600"></div>
             </div>
-            
+
             <div className="space-y-4 text-gray-700 font-mono text-sm sm:text-base leading-relaxed">
               <p>
                 My journey into tech wasn't conventional. I started with a{' '}
-                <span className="text-black font-semibold">BSc in Mathematics</span> with Computer Science 
+                <span className="text-black font-semibold">BSc in Mathematics</span> with Computer Science
                 as a complementary subject, initially preparing for IBPS RRB exams like many others.
               </p>
-              
+
               <p>
-                But something felt different. While others were focused on banking careers, I found myself 
-                drawn to the logic and creativity of <span className="text-green-600 font-semibold">software development</span>. 
-                The decision to leave traditional paths and fully immerse myself into programming was one of the 
+                But something felt different. While others were focused on banking careers, I found myself
+                drawn to the logic and creativity of <span className="text-green-600 font-semibold">software development</span>.
+                The decision to leave traditional paths and fully immerse myself into programming was one of the
                 best choices I've made.
               </p>
-              
+
               <p>
                 Over the years, I've developed practical expertise in{' '}
                 <span className="text-green-600 font-semibold">Python, Django, Django REST Framework, React, PostgreSQL, MongoDB</span>{' '}
-                and <span className="text-green-600 font-semibold">RESTful APIs</span>. I'm confident working 
+                and <span className="text-green-600 font-semibold">RESTful APIs</span>. I'm confident working
                 across both frontend and backend, always striving for that perfect balance between functionality and elegance.
               </p>
-              
+
               <p>
                 Currently, I'm actively <span className="text-green-600 font-semibold">seeking new opportunities</span>{' '}
                 where I can contribute my skills and continue growing as a developer.

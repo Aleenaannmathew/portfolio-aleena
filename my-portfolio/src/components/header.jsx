@@ -48,10 +48,10 @@ export default function PortfolioHeader() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-400 transition-all duration-200 group-hover:w-full"></span>
             </a>
             <a 
-              href="#experience" 
+              href="#education" 
               className="font-mono text-sm hover:text-green-400 transition-colors duration-200 relative group"
             >
-              Experience
+              Education
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-400 transition-all duration-200 group-hover:w-full"></span>
             </a>
             <a 
@@ -145,7 +145,7 @@ export default function PortfolioHeader() {
               {/* Mobile Social Links */}
               <div className="flex items-center space-x-4 pt-4 border-t border-gray-800 mt-4">
                 <a 
-                  href="https://github.com/aleena" 
+                  href="https://github.com/Aleenaannmathew" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors duration-200"
@@ -153,7 +153,7 @@ export default function PortfolioHeader() {
                   <Github size={20} />
                 </a>
                 <a 
-                  href="https://linkedin.com/in/aleena-mathew" 
+                  href="https://www.linkedin.com/in/aleena-mathew-900063294/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors duration-200"
@@ -161,7 +161,7 @@ export default function PortfolioHeader() {
                   <Linkedin size={20} />
                 </a>
                 <a 
-                  href="mailto:aleena@example.com"
+                  href="mailto:aleenamathew986@gmail.com"
                   className="text-gray-400 hover:text-white transition-colors duration-200"
                 >
                   <Mail size={20} />

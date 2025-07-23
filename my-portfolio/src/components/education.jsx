@@ -22,7 +22,7 @@ function EducationSection() {
         "Mastered Django, React, REST APIs, and database management"
       ],
       skills: ["Python", "Django", "React", "JavaScript", "PostgreSQL", "MongoDB", "REST APIs"],
-      achievement: "Top Performer & Mentor"
+      achievement: "Software Developer"
     },
     {
       id: 2,
@@ -63,7 +63,7 @@ function EducationSection() {
         "Experience with mathematical modeling and statistics",
         "Built systematic approach to complex problem-solving"
       ],
-      skills: ["Mathematical Analysis", "Logic", "Statistics", "Computer Science Basics", "Research Methods"],
+      skills: ["Mathematical Analysis", "Logic", "Statistics", "Computer Science ", "Research Methods"],
       achievement: "Graduate"
     }
   ];

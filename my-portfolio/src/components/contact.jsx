@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Linkedin, 
-  Github, 
-  Send, 
-  MessageCircle,
+import {
+  Mail,
+  MapPin,
+  Linkedin,
+  Github,
+  Send,
   Clock,
   CheckCircle
 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 function ContactSection() {
   const [formData, setFormData] = useState({
@@ -24,7 +23,7 @@ function ContactSection() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value
     }));
@@ -33,88 +32,95 @@ function ContactSection() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      }, 3000);
-    }, 2000);
+
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formData,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          setIsSubmitting(false);
+          setIsSubmitted(true);
+          setTimeout(() => {
+            setIsSubmitted(false);
+            setFormData({
+              name: '',
+              email: '',
+              subject: '',
+              message: ''
+            });
+          }, 3000);
+        },
+        (error) => {
+          console.error('Email sending failed:', error);
+          setIsSubmitting(false);
+          alert('Failed to send message. Please try again later.');
+        }
+      );
   };
 
   const contactMethods = [
     {
       icon: Mail,
-      title: "Email",
-      value: "aleena.mathew@email.com",
-      description: "Send me an email anytime",
-      action: "mailto:aleena.mathew@email.com",
-      color: "text-green-600"
-    },
-    {
-      icon: Phone,
-      title: "Phone",
-      value: "+91 98765 43210",
-      description: "Call me for immediate response",
-      action: "tel:+919876543210",
-      color: "text-blue-600"
+      title: 'Email',
+      value: 'aleenamathew986@gmail.com',
+      description: 'Send me an email',
+      action: 'mailto:aleenamathew986@gmail.com',
+      color: 'text-green-600'
     },
     {
       icon: MapPin,
-      title: "Location",
-      value: "Kozhikode, Kerala",
-      description: "Available for local meetings",
-      action: "#",
-      color: "text-purple-600"
+      title: 'Location',
+      value: 'Kerala',
+      description: '',
+      action: '#',
+      color: 'text-purple-600'
     }
   ];
 
   const socialLinks = [
     {
       icon: Linkedin,
-      name: "LinkedIn",
-      username: "@aleena-mathew",
-      url: "https://linkedin.com/in/aleena-mathew",
-      color: "text-blue-600"
+      name: 'LinkedIn',
+      username: '@aleena-mathew',
+      url: 'https://www.linkedin.com/in/aleena-mathew-900063294/',
+      color: 'text-blue-600'
     },
     {
       icon: Github,
-      name: "GitHub",
-      username: "@aleena-mathew",
-      url: "https://github.com/aleena-mathew",
-      color: "text-gray-700"
+      name: 'GitHub',
+      username: '@aleena-mathew',
+      url: 'https://github.com/Aleenaannmathew',
+      color: 'text-gray-700'
     }
   ];
 
   return (
-    <section id="contact" className="bg-black text-white py-16 lg:py-24">
+    <section id="contact" className="bg-white text-black py-16 lg:py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-mono font-bold mb-4">
-            Let's <span className="text-green-400">Connect</span>.
+            Let's <span className="text-green-600">Connect</span>.
           </h2>
-          <div className="w-16 h-1 bg-green-400 mx-auto mb-6"></div>
-          <p className="text-lg font-mono text-gray-300 max-w-2xl mx-auto">
-            Ready to discuss your next project or explore collaboration opportunities? 
-            I'd love to hear from you and{' '}
-            <span className="text-green-400 font-semibold">bring your ideas to life</span>.
+          <div className="w-16 h-1 bg-green-600 mx-auto mb-6"></div>
+          <p className="text-lg font-mono text-gray-600 max-w-2xl mx-auto">
+            Have a project in mind or want to collaborate? I’m always open to
+            new ideas and discussions. Let’s bring something awesome to life.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Contact Information */}
+          {/* Left Panel: Contact Cards + Social */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-mono font-bold mb-6 text-white">
-                Get <span className="text-green-400">In Touch</span>
+              <h3 className="text-2xl font-mono font-bold mb-6">
+                Get <span className="text-green-600">In Touch</span>
               </h3>
-              
+
               <div className="space-y-6">
                 {contactMethods.map((method, index) => {
                   const IconComponent = method.icon;
@@ -122,21 +128,23 @@ function ContactSection() {
                     <a
                       key={index}
                       href={method.action}
-                      className="block bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-green-400 hover:bg-gray-850 transition-all duration-300 group"
+                      className="block bg-green-50 border border-green-200 rounded-lg p-6 hover:shadow-md transition-all duration-300 group"
                     >
                       <div className="flex items-start space-x-4">
-                        <div className="p-3 bg-gray-800 border border-gray-700 rounded-lg group-hover:border-green-400 transition-colors duration-300">
-                          <IconComponent className={`${method.color} group-hover:text-green-400`} size={24} />
+                        <div className="p-3 bg-white border border-green-200 rounded-lg">
+                          <IconComponent
+                            className={`${method.color}`}
+                            size={24}
+                          />
                         </div>
-                        
-                        <div className="flex-1">
-                          <h4 className="text-lg font-mono font-semibold text-white mb-1">
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-lg font-mono font-semibold mb-1">
                             {method.title}
                           </h4>
-                          <p className="font-mono text-green-400 text-sm mb-2 font-medium">
+                          <p className="font-mono text-green-600 text-sm font-medium">
                             {method.value}
                           </p>
-                          <p className="font-mono text-gray-400 text-sm">
+                          <p className="font-mono text-gray-500 text-sm">
                             {method.description}
                           </p>
                         </div>
@@ -149,10 +157,10 @@ function ContactSection() {
 
             {/* Social Links */}
             <div>
-              <h4 className="text-lg font-mono font-semibold text-white mb-4">
+              <h4 className="text-lg font-mono font-semibold mb-4">
                 Find Me Online
               </h4>
-              <div className="flex space-x-4">
+              <div className="flex flex-wrap gap-4">
                 {socialLinks.map((social, index) => {
                   const IconComponent = social.icon;
                   return (
@@ -161,14 +169,12 @@ function ContactSection() {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center space-x-3 bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 hover:border-green-400 hover:bg-gray-850 transition-all duration-300 group"
+                      className="flex items-center space-x-3 bg-green-50 border border-green-200 rounded-lg px-4 py-3 hover:shadow-md transition-all duration-300 group"
                     >
-                      <IconComponent className={`${social.color} group-hover:text-green-400`} size={20} />
+                      <IconComponent className={`${social.color}`} size={20} />
                       <div className="font-mono text-sm">
-                        <p className="text-white group-hover:text-green-400 font-medium">
-                          {social.name}
-                        </p>
-                        <p className="text-gray-400 text-xs">
+                        <p className="text-black font-medium">{social.name}</p>
+                        <p className="text-gray-600 text-xs">
                           {social.username}
                         </p>
                       </div>
@@ -178,34 +184,35 @@ function ContactSection() {
               </div>
             </div>
 
-            {/* Availability Status */}
-            <div className="bg-green-900/20 border border-green-800 rounded-lg p-6">
+            {/* Availability */}
+            <div className="bg-green-50 border border-green-200 rounded-lg p-6">
               <div className="flex items-center space-x-3 mb-3">
-                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                <h4 className="text-lg font-mono font-semibold text-green-400">
+                <div className="w-3 h-3 bg-green-600 rounded-full animate-pulse"></div>
+                <h4 className="text-lg font-mono font-semibold text-green-800">
                   Available for Work
                 </h4>
               </div>
-              <p className="font-mono text-sm text-gray-300 mb-3">
-                Currently seeking new opportunities and exciting projects to work on.
+              <p className="font-mono text-sm text-gray-700 mb-3">
+                Currently open to exciting projects, collaborations, and new
+                roles.
               </p>
-              <div className="flex items-center space-x-2 text-xs font-mono text-gray-400">
+              <div className="flex items-center space-x-2 text-xs font-mono text-gray-500">
                 <Clock size={14} />
-                <span>Response time: Usually within 24 hours</span>
+                <span>Response time: Within 24 hours</span>
               </div>
             </div>
           </div>
 
-          {/* Contact Form */}
+          {/* Right Panel: Contact Form */}
           <div>
-            <h3 className="text-2xl font-mono font-bold mb-6 text-white">
-              Send a <span className="text-green-400">Message</span>
+            <h3 className="text-2xl font-mono font-bold mb-6">
+              Send a <span className="text-green-600">Message</span>
             </h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-mono font-semibold text-gray-300 mb-2">
+                  <label className="block text-sm font-mono font-semibold text-gray-700 mb-2">
                     Your Name *
                   </label>
                   <input
@@ -214,13 +221,12 @@ function ContactSection() {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full bg-gray-900 border border-gray-800 rounded px-4 py-3 text-white font-mono text-sm focus:border-green-400 focus:outline-none transition-colors duration-300"
-                    placeholder="John Doe"
+                    className="w-full bg-white border border-gray-300 rounded px-4 py-3 text-black font-mono text-sm focus:border-green-500 focus:outline-none transition-colors duration-300"
+                    placeholder="Your name"
                   />
                 </div>
-                
                 <div>
-                  <label className="block text-sm font-mono font-semibold text-gray-300 mb-2">
+                  <label className="block text-sm font-mono font-semibold text-gray-700 mb-2">
                     Email Address *
                   </label>
                   <input
@@ -229,14 +235,14 @@ function ContactSection() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full bg-gray-900 border border-gray-800 rounded px-4 py-3 text-white font-mono text-sm focus:border-green-400 focus:outline-none transition-colors duration-300"
-                    placeholder="john@example.com"
+                    className="w-full bg-white border border-gray-300 rounded px-4 py-3 text-black font-mono text-sm focus:border-green-500 focus:outline-none transition-colors duration-300"
+                    placeholder="Your email"
                   />
                 </div>
               </div>
-              
+
               <div>
-                <label className="block text-sm font-mono font-semibold text-gray-300 mb-2">
+                <label className="block text-sm font-mono font-semibold text-gray-700 mb-2">
                   Subject *
                 </label>
                 <input
@@ -245,13 +251,13 @@ function ContactSection() {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full bg-gray-900 border border-gray-800 rounded px-4 py-3 text-white font-mono text-sm focus:border-green-400 focus:outline-none transition-colors duration-300"
-                  placeholder="Project Discussion"
+                  className="w-full bg-white border border-gray-300 rounded px-4 py-3 text-black font-mono text-sm focus:border-green-500 focus:outline-none transition-colors duration-300"
+                  placeholder="Project Inquiry"
                 />
               </div>
-              
+
               <div>
-                <label className="block text-sm font-mono font-semibold text-gray-300 mb-2">
+                <label className="block text-sm font-mono font-semibold text-gray-700 mb-2">
                   Message *
                 </label>
                 <textarea
@@ -260,21 +266,20 @@ function ContactSection() {
                   onChange={handleInputChange}
                   required
                   rows={6}
-                  className="w-full bg-gray-900 border border-gray-800 rounded px-4 py-3 text-white font-mono text-sm focus:border-green-400 focus:outline-none transition-colors duration-300 resize-none"
-                  placeholder="Tell me about your project or how we can work together..."
+                  className="w-full bg-white border border-gray-300 rounded px-4 py-3 text-black font-mono text-sm focus:border-green-500 focus:outline-none transition-colors duration-300 resize-none"
+                  placeholder="Tell me about your project or idea..."
                 />
               </div>
-              
+
               <button
                 type="submit"
                 disabled={isSubmitting || isSubmitted}
-                className={`w-full py-3 px-6 font-mono font-semibold text-sm transition-all duration-300 rounded flex items-center justify-center space-x-2 ${
-                  isSubmitted 
-                    ? 'bg-green-600 text-white' 
-                    : isSubmitting 
-                      ? 'bg-gray-700 text-gray-400 cursor-not-allowed' 
-                      : 'bg-green-400 text-black hover:bg-green-300'
-                }`}
+                className={`w-full py-3 px-6 font-mono font-semibold text-sm transition-all duration-300 rounded flex items-center justify-center space-x-2 ${isSubmitted
+                    ? 'bg-green-600 text-white'
+                    : isSubmitting
+                      ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                      : 'bg-green-500 text-white hover:bg-green-400'
+                  }`}
               >
                 {isSubmitted ? (
                   <>
@@ -295,21 +300,22 @@ function ContactSection() {
               </button>
             </form>
 
-            {/* Terminal-style note */}
-            <div className="mt-8 bg-gray-950 border border-gray-800 rounded-lg p-4">
-              <div className="flex items-center space-x-3 mb-3 pb-2 border-b border-gray-800">
+            <div className="mt-8 bg-green-50 border border-green-200 rounded-lg p-4">
+              <div className="flex items-center space-x-3 mb-3 pb-2 border-b border-green-200">
                 <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                 <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                 <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="text-gray-400 text-xs font-mono ml-4">~/contact-info</span>
+                <span className="text-gray-600 text-xs font-mono ml-4">
+                  ~/contact-info
+                </span>
               </div>
-              <p className="text-green-400 text-xs font-mono">
+              <p className="text-green-700 text-xs font-mono">
                 <span className="text-gray-500">$</span> echo "Thanks for reaching out!"
               </p>
-              <p className="text-white text-xs font-mono mt-1">
-                I'll get back to you as soon as possible.
+              <p className="text-black text-xs font-mono mt-1">
+                I’ll get back to you shortly.
               </p>
-              <p className="text-green-400 text-xs font-mono">
+              <p className="text-green-700 text-xs font-mono">
                 Looking forward to our conversation! 🚀
               </p>
             </div>

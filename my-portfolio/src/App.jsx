@@ -33,21 +33,19 @@ function App() {
          
         </section>
 
-        {/* Experience Section */}
-        <section id="experience">
-          <SkillsSection/>
-        </section>
-
         {/* Projects Section */}
         <section id="projects">
          <ProjectsSection/>
         </section>
         
-
-
         {/* Education Section */}
         <section id="education">
         <EducationSection/>
+        </section>
+
+        {/* Experience Section */}
+        <section id="experience">
+          <SkillsSection/>
         </section>
 
         {/* Contact Section */}

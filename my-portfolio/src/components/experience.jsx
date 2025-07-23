@@ -1,60 +1,31 @@
 import React from 'react';
 
 export default function SkillsSection() {
-  const skills = {
-    "Backend": [
-      "Python", "Django", "Django REST Framework", "ORM", "JWT", 
-      "Django Channels", "WebSocket", "Celery", "JavaScript"
-    ],
-    "Frontend": [
-      "React", "Redux", "HTML", "CSS", "Tailwind CSS", "Bootstrap", "JavaScript"
-    ],
-    "Database": [
-      "PostgreSQL", "MongoDB", "Redis", "SQL"
-    ],
-    "Cloud & DevOps": [
-      "AWS (EC2, EKS, RDS, ALB)", "Google Cloud Platform", "NGINX", "Firebase"
-    ],
-    "Tools": [
-      "Git", "Postman", "Figma", "Pandas", "Data Analysis"
-    ],
-    "Concepts": [
-      "MVT Architecture", "REST APIs", "Data Structures", "Algorithms", "C Programming"
-    ]
-  };
+  const skills = [
+    "Python", "Django", "Django REST Framework", "ORM", "PostgreSQL", "JWT",
+    "Django Channels", "Redis", "WebSocket", "Celery", "Supervisor", "Gunicorn",
+    "React", "Redux", "HTML", "CSS", "Tailwind CSS", "Bootstrap", "JavaScript",
+    "Firebase", "Razorpay", "Cashfree", "Git", "Postman", "Figma", "Pandas",
+    "MongoDB", "SQL", "AWS (EC2, S3)", "GCP", "NGINX",
+    "Real Analysis", "Statistical Analysis", "Logical Reasoning",
+    "Quantitative Aptitude", "Critical Thinking"
+  ];
 
   return (
     <section id="skills" className="bg-white text-black py-16 lg:py-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="mb-16">
-          <h2 className="text-3xl sm:text-4xl font-mono font-bold mb-4">
-            <span className="text-green-600">Skills</span> & Technologies.
-          </h2>
-          <div className="w-16 h-1 bg-green-600 mb-6"></div>
-          <p className="text-gray-600 font-mono text-lg max-w-3xl">
-            Here's a comprehensive list of technologies I work with to build robust, scalable applications.
-          </p>
-        </div>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 className="text-3xl sm:text-4xl font-mono font-bold mb-10">
+          <span className="text-green-600">My</span> Skills
+        </h2>
 
-        {/* Skills Container */}
-        <div className="space-y-8">
-          {Object.entries(skills).map(([category, skillList], index) => (
-            <div key={index} className="border-l-4 border-green-600 pl-6 py-4">
-              <h3 className="text-xl font-mono font-semibold mb-4 text-black">
-                {category}
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                {skillList.map((skill, skillIndex) => (
-                  <span
-                    key={skillIndex}
-                    className="bg-black text-white px-4 py-2 font-mono text-sm hover:bg-green-600 hover:text-black transition-colors duration-200 cursor-default"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
+        <div className="flex flex-wrap justify-center gap-3">
+          {skills.map((skill, index) => (
+            <span
+              key={index}
+              className="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded text-xs sm:text-sm font-mono font-medium hover:border-green-600 hover:text-green-600 transition-colors duration-200"
+            >
+              {skill}
+            </span>
           ))}
         </div>
       </div>
