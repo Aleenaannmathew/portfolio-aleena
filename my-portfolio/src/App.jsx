@@ -8,54 +8,43 @@ import SkillsSection from './components/experience';
 import ProjectsSection from './components/project';
 import EducationSection from './components/education';
 
-
 function App() {
   return (
     <div className="App">
-      {/* Navigation Header - Fixed at top */}
+      {/* Sticky Header */}
       <Header />
-      
-      {/* Main Content Sections */}
+
       <main>
-        {/* Intro Section */}
-        <section id="intro">
-        <Intro/>
+        {/* Home / Intro Section */}
+        <section id="home" className="min-h-screen scroll-mt-20">
+          <Intro />
         </section>
 
         {/* About Section */}
-        <section id="about">
-          <About/>
-        </section>
-
-
-        {/* Hero/Landing Section */}
-        <section id="home">
-         
+        <section id="about" className="min-h-screen scroll-mt-20">
+          <About />
         </section>
 
         {/* Projects Section */}
-        <section id="projects">
-         <ProjectsSection/>
+        <section id="projects" className="min-h-screen scroll-mt-20">
+          <ProjectsSection />
         </section>
-        
+
         {/* Education Section */}
-        <section id="education">
-        <EducationSection/>
+        <section id="education" className="min-h-screen scroll-mt-20">
+          <EducationSection />
         </section>
 
         {/* Experience Section */}
-        <section id="experience">
-          <SkillsSection/>
+        <section id="experience" className="min-h-screen scroll-mt-20">
+          <SkillsSection />
         </section>
 
         {/* Contact Section */}
-        <section id="contact">
-          <Contact/>
+        <section id="contact" className="min-h-screen scroll-mt-20">
+          <Contact />
         </section>
       </main>
-
-      {/* Footer */}
-     
     </div>
   );
 }

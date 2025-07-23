@@ -34,7 +34,7 @@ function ProjectsSection() {
       title: "ADORE",
       subtitle: "E-commerce Jewellery Platform",
       description: "An elegant e-commerce website specializing in jewelry sales with secure payment processing, product catalog management, and responsive design for optimal user experience.",
-      image: "/api/placeholder/600/400", // Replace with your actual image path
+      image: "/Adore.png",
       technologies: [
         { name: "Django", icon: Database, color: "text-green-600" },
         { name: "HTML/CSS", icon: Code, color: "text-orange-600" },
