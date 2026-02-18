@@ -108,8 +108,8 @@ function ContactSection() {
           </h2>
           <div className="w-16 h-1 bg-green-600 mx-auto mb-6"></div>
           <p className="text-lg font-mono text-gray-600 max-w-2xl mx-auto">
-            Have a project in mind or want to collaborate? I’m always open to
-            new ideas and discussions. Let’s bring something awesome to life.
+            Interested in collaboration, freelance opportunities, or full-time roles?
+            Let's discuss how I can help build scalable and impactful solutions.
           </p>
         </div>
 
@@ -275,10 +275,10 @@ function ContactSection() {
                 type="submit"
                 disabled={isSubmitting || isSubmitted}
                 className={`w-full py-3 px-6 font-mono font-semibold text-sm transition-all duration-300 rounded flex items-center justify-center space-x-2 ${isSubmitted
-                    ? 'bg-green-600 text-white'
-                    : isSubmitting
-                      ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                      : 'bg-green-500 text-white hover:bg-green-400'
+                  ? 'bg-green-600 text-white'
+                  : isSubmitting
+                    ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                    : 'bg-green-500 text-white hover:bg-green-400'
                   }`}
               >
                 {isSubmitted ? (

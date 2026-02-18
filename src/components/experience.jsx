@@ -1,33 +1,62 @@
-import React from 'react';
+import React from "react";
 
-export default function SkillsSection() {
-  const skills = [
-    "Python", "Django", "Django REST Framework", "ORM", "PostgreSQL", "JWT",
-    "Django Channels", "Redis", "WebSocket", "Celery", "Supervisor", "Gunicorn",
-    "React", "Redux", "HTML", "CSS", "Tailwind CSS", "Bootstrap", "JavaScript",
-    "Firebase", "Razorpay", "Cashfree", "Git", "Postman", "Figma", "Pandas",
-    "MongoDB", "SQL", "AWS (EC2, S3)", "GCP", "NGINX",
-    "Real Analysis", "Statistical Analysis", "Logical Reasoning",
-    "Quantitative Aptitude", "Critical Thinking"
+export default function ExperienceSection() {
+  const experiences = [
+    {
+      role: "Software Engineer",
+      company: "Offenso TechSchool, Kochi",
+      period: "Dec 2025 – Present",
+      points: [
+        "Developing scalable full-stack applications using Django and React",
+        "Designing high-performance REST APIs",
+        "Optimizing backend performance and database queries",
+        "Mentoring students and guiding production-level projects",
+      ],
+    },
+    {
+      role: "Freelance Backend Developer",
+      company: "Third Day Academy ERP",
+      period: "Freelance",
+      points: [
+        "Built multi-branch academy ERP system",
+        "Implemented role-based authentication",
+        "Integrated Razorpay payments",
+        "AWS S3 media storage integration",
+      ],
+    },
+    {
+      role: "Backend Developer",
+      company: "Private B2B Video Communication",
+      period: "Freelance",
+      points: [
+        "Developed enterprise video communication platform",
+        "Integrated Agora SDK for video conferencing",
+        "Implemented region-based access control",
+        "Handled signaling and session lifecycle",
+      ],
+    },
   ];
 
   return (
-    <section id="skills" className="bg-white text-black py-16 lg:py-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl sm:text-4xl font-mono font-bold mb-10">
-          <span className="text-green-600">My</span> Skills
+    <section id="experience" className="py-20 bg-gray-50">
+      <div className="max-w-5xl mx-auto px-6 font-mono">
+        <h2 className="text-4xl font-bold mb-10">
+          <span className="text-green-600">Experience</span>
         </h2>
 
-        <div className="flex flex-wrap justify-center gap-3">
-          {skills.map((skill, index) => (
-            <span
-              key={index}
-              className="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded text-xs sm:text-sm font-mono font-medium hover:border-green-600 hover:text-green-600 transition-colors duration-200"
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
+        {experiences.map((exp, i) => (
+          <div key={i} className="mb-10 bg-white p-6 rounded-lg shadow">
+            <h3 className="text-xl font-bold">{exp.role}</h3>
+            <p className="text-green-600">{exp.company}</p>
+            <p className="text-sm text-gray-500 mb-4">{exp.period}</p>
+
+            <ul className="list-disc ml-5 space-y-1">
+              {exp.points.map((p, idx) => (
+                <li key={idx}>{p}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </section>
   );
