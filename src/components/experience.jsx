@@ -3,14 +3,14 @@ import React from "react";
 export default function ExperienceSection() {
   const experiences = [
     {
-      role: "Software Engineer",
+      role: "Python Full Stack Developer & Trainer",
       company: "Offenso TechSchool, Kochi",
       period: "Dec 2025 – Present",
       points: [
         "Developing scalable full-stack applications using Django and React",
-        "Designing high-performance REST APIs",
-        "Optimizing backend performance and database queries",
-        "Mentoring students and guiding production-level projects",
+        "Training students in Python, SQL, Django, and Full Stack Development",
+        "Designing high-performance REST APIs and real-time systems",
+        "Mentoring students through live projects and interview preparation",
       ],
     },
     {

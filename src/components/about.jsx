@@ -10,9 +10,10 @@ export default function AboutSection() {
         </h2>
 
         <p>
-          I am a Python Full Stack Developer with professional experience
-          building scalable web platforms, real-time communication systems,
-          and enterprise applications using Django and React.
+          I am currently working as a <strong>Python Full Stack Developer and Trainer </strong>
+           at Offenso TechSchool, Kochi, where I build scalable web applications
+          and mentor aspiring developers in Python, Django, React, databases,
+          and real-world project development.
         </p>
 
         <p>
@@ -23,18 +24,25 @@ export default function AboutSection() {
         </p>
 
         <p>
+          Along with development, I actively mentor students through hands-on
+          project guidance, doubt clearance sessions, interview preparation,
+          and full stack development mentorship programs focused on industry-level skills.
+        </p>
+
+        <p>
           I have worked on telehealth platforms, ERP systems, enterprise
-          communication software, and production e-commerce platforms
-          deployed on AWS and GCP environments.
+          communication software, mentorship platforms, and production
+          e-commerce applications deployed on AWS and GCP environments.
         </p>
 
         <ul className="space-y-2 pt-4">
-          <li>✔ Scalable Django backend architecture</li>
+          <li>✔ Python Full Stack Development</li>
+          <li>✔ Django & React Application Development</li>
           <li>✔ Secure REST API design</li>
           <li>✔ WebRTC & WebSocket real-time apps</li>
           <li>✔ Database optimization</li>
           <li>✔ Cloud deployment (AWS/GCP)</li>
-          <li>✔ Mentoring developers</li>
+          <li>✔ Technical Training & Mentorship</li>
         </ul>
       </div>
     </section>
