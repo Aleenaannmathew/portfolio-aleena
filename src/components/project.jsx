@@ -10,7 +10,7 @@ export default function ProjectsSection() {
       title: "MENTORA",
       desc: "Omegle-style anonymous mentorship platform using WebRTC and WebSockets with Redis channel layers.",
       tech: "Django Channels, React, Redis, PostgreSQL, JWT",
-      link: "#",
+      link: "https://github.com/aleena-techschool/mentora.git",
       image: mentora,
     },
     {

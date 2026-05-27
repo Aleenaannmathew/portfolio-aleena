@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
 import Header from './components/header';
-import About from './components/about';
-import Contact from './components/contact';
 import Intro from './components/intro';
-import SkillsSection from './components/experience';
+import About from './components/about';
+import ExperienceSection from './components/experience';
+import SkillsSection from './components/skills';
 import ProjectsSection from './components/project';
 import EducationSection from './components/education';
+import Contact from './components/contact';
 
 function App() {
   return (
@@ -15,35 +16,42 @@ function App() {
       <Header />
 
       <main>
-        {/* Home / Intro Section */}
-        <section id="home" className="min-h-screen scroll-mt-20">
+
+        {/* Home */}
+        <section id="home" className="scroll-mt-24">
           <Intro />
         </section>
 
-        {/* About Section */}
-        <section id="about" className="min-h-screen scroll-mt-20">
+        {/* About */}
+        <section id="about" className="scroll-mt-24">
           <About />
         </section>
 
-        {/* Projects Section */}
-        <section id="projects" className="min-h-screen scroll-mt-20">
+        {/* Experience */}
+        <section id="experience" className="scroll-mt-24">
+          <ExperienceSection />
+        </section>
+
+        {/* Projects */}
+        <section id="projects" className="scroll-mt-24">
           <ProjectsSection />
         </section>
 
-        {/* Education Section */}
-        <section id="education" className="min-h-screen scroll-mt-20">
-          <EducationSection />
-        </section>
-
-        {/* Experience Section */}
-        <section id="experience" className="min-h-screen scroll-mt-20">
+        {/* Skills */}
+        <section id="skills" className="scroll-mt-24">
           <SkillsSection />
         </section>
 
-        {/* Contact Section */}
-        <section id="contact" className="min-h-screen scroll-mt-20">
+        {/* Education */}
+        <section id="education" className="scroll-mt-24">
+          <EducationSection />
+        </section>
+
+        {/* Contact */}
+        <section id="contact" className="scroll-mt-24">
           <Contact />
         </section>
+
       </main>
     </div>
   );

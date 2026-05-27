@@ -53,11 +53,10 @@ export default function PortfolioHeader() {
             <a
               key={link.href}
               href={`#${link.href}`}
-              className={`font-mono text-sm px-4 py-2 rounded-full ${
-                activeSection === link.href
-                  ? "bg-green-600 text-white"
-                  : "hover:bg-green-100 text-gray-700"
-              }`}
+              className={`font-mono text-sm px-4 py-2 rounded-full ${activeSection === link.href
+                ? "bg-green-600 text-white"
+                : "hover:bg-green-100 text-gray-700"
+                }`}
             >
               {link.name}
             </a>
@@ -65,13 +64,21 @@ export default function PortfolioHeader() {
         </nav>
 
         <div className="hidden md:flex space-x-4">
-          <a href="https://github.com/Aleenaannmathew">
-            <Github size={20} />
+          <a
+            href="https://github.com/Aleenaannmathew"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Github />
           </a>
-          <a href="https://linkedin.com/in/aleena-mathew-900063294">
+          <a href="https://linkedin.com/in/aleena-mathew-900063294"
+            target="_blank"
+            rel="noopener noreferrer">
             <Linkedin size={20} />
           </a>
-          <a href="mailto:aleenamathew986@gmail.com">
+          <a href="mailto:aleenamathew986@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer">
             <Mail size={20} />
           </a>
         </div>
